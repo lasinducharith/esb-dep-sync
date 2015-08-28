@@ -1,0 +1,11 @@
+<proxy xmlns="http://ws.apache.org/ns/synapse" name="Proxy" transports="https,http" statistics="disable" trace="disable" startOnLoad="true">
+   <target>
+      <outSequence>
+         <send />
+      </outSequence>
+      <endpoint>
+         <address uri="http://172.17.42.1:9767/services/echo" />
+      </endpoint>
+   </target>
+   <publishWSDL uri="http://172.17.42.1:9767/services/echo?wsdl" />
+</proxy>
