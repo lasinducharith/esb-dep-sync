@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serviceGroup>
+   <service name="Proxy"
+            exposedAllTransports="false"
+            serviceDeployedTime="1441118293721"
+            successfullyAdded="true">
+      <operation serviceDocumentation="Get weather report for all major cities around the world."
+                 name="GetWeather">
+         <module name="wso2statistics" version="4.2.2" type="engagedModules"/>
+         <module name="POXSecurityModule" version="4.2.2" type="engagedModules"/>
+      </operation>
+      <operation serviceDocumentation="Get all major cities by country name(full / part)."
+                 name="GetCitiesByCountry">
+         <module name="wso2statistics" version="4.2.2" type="engagedModules"/>
+         <module name="POXSecurityModule" version="4.2.2" type="engagedModules"/>
+      </operation>
+      <bindings>
+         <binding name="ProxySoap11Binding">
+            <operation name="GetWeather"/>
+            <operation name="GetCitiesByCountry"/>
+         </binding>
+         <binding name="ProxySoap12Binding">
+            <operation name="GetWeather"/>
+            <operation name="GetCitiesByCountry"/>
+         </binding>
+         <binding name="ProxyHttpBinding">
+            <operation name="GetWeather"/>
+            <operation name="GetCitiesByCountry"/>
+         </binding>
+      </bindings>
+      <policies/>
+      <module name="wso2statistics" version="4.2.2" type="engagedModules"/>
+      <module name="POXSecurityModule" version="4.2.2" type="engagedModules"/>
+      <parameter name="serviceType">proxy</parameter>
+      <parameter name="interface">GlobalWeatherSoap</parameter>
+      <association destinationPath="/repository/transports/https/listener"
+                   type="exposedTransports"/>
+      <association destinationPath="/repository/transports/http/listener"
+                   type="exposedTransports"/>
+   </service>
+</serviceGroup>
