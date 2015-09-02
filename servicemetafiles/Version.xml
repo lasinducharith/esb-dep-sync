@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<serviceGroup>
+<serviceGroup name="Version"
+              hashValue="55d39cf28709884d411c7feb04c83871"
+              successfullyAdded="true">
    <service name="Version"
             serviceDocumentation="Version"
             exposedAllTransports="false"
